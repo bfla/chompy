@@ -14,6 +14,8 @@
 @interface CYHomeViewController ()
 
 @property (nonatomic, strong) IBOutlet UIView *headerView;
+@property (nonatomic, weak) IBOutlet UILabel *totalChompedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *totalBurnedLabel;
 
 @end
 
@@ -49,10 +51,11 @@
     //[self.tableView registerNib:nib
     //forCellReuseIdentifier:@"BNRItemCell"];
     
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
     UIView *header = self.headerView;
     [self.tableView setTableHeaderView:header];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -67,6 +70,8 @@
     self.navigationController.navigationBarHidden = NO;
     // Update data
     self.chompsToday = [[CYChompStore sharedStore] allChomps];
+    self.totalChompedLabel.text = [NSString stringWithFormat:@"%d", [[CYChompStore sharedStore] totalChompedToday]];
+    self.totalBurnedLabel.text = [NSString stringWithFormat:@"%d", [[CYChompStore sharedStore] totalBurnedToday]];
     NSLog(@"Initializing HomeVC with %d chomps", [self.chompsToday count]);
     [self.tableView reloadData];
     for (CYChomp *chomp in self.chompsToday) {
@@ -99,6 +104,9 @@
 {
     static NSString *CellIdentifier = @"UITableViewCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if (cell == Nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    }
     
     // Get data
     CYChomp *chomp = self.chompsToday[indexPath.row];
@@ -110,11 +118,12 @@
     } else {
         cell.textLabel.textColor = [[UIColor alloc] initWithRed:1.0 green:.45 blue:0.0 alpha:1.0];
     }
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-    dateFormatter.timeStyle = NSDateFormatterNoStyle;
-    NSString *timeString = [dateFormatter stringFromDate:chomp.dateCreated];
-    cell.detailTextLabel.text = timeString;
+    dateFormatter.dateStyle = NSDateFormatterNoStyle;
+    dateFormatter.timeStyle = NSDateFormatterShortStyle;
+    
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:chomp.timeChomped];
     return cell;
 }
 

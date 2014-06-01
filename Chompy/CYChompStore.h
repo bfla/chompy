@@ -19,4 +19,7 @@
 - (void)removeChomp:(CYChomp *)chomp;
 - (BOOL)saveChanges;
 
+// Special scopes and data methods
+- (int)totalChompedToday;
+- (int)totalBurnedToday;
 @end

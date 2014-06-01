@@ -118,11 +118,6 @@
     return [self.privateChomps copy];
 }
 
-/*- (NSArray *)chompsToday
- {
- return [self.privateChomps copy];
- }*/
-
 - (void)loadAllChomps
 // Get all chomps from the db
 {
@@ -131,7 +126,7 @@
         NSEntityDescription *e = [NSEntityDescription entityForName:@"CYChomp" inManagedObjectContext:self.context];
         request.entity = e;
         
-        NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"dateCreated" ascending:YES];
+        NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"dateCreated" ascending:NO];
         request.sortDescriptors = @[sd];
         
         NSError *error;
@@ -144,16 +139,35 @@
     }
 }
 
-#pragma mark - Special scopes and data methods
-/*-(int)totalCalsToday
- {
- 
- }*/
+- (NSArray *)chompsToday
+{
+    return [self allChomps];
+}
 
-/*- (int)totalBurnedToday
- {
- 
- }*/
+#pragma mark - Special scopes and data methods
+-(int)totalChompedToday
+{
+    int sum = 0;
+    NSArray *chompsToday = [self chompsToday];
+    for (CYChomp *chomp in chompsToday) {
+        if (!chomp.burned) {
+            sum = sum + chomp.calories;
+        }
+    }
+    return sum;
+}
+
+- (int)totalBurnedToday
+{
+    int sum = 0;
+    NSArray *chompsToday = [self chompsToday];
+    for (CYChomp *chomp in chompsToday) {
+        if (chomp.burned) {
+            sum = sum + chomp.calories;
+        }
+    }
+    return sum;
+}
 
 
 @end
