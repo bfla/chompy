@@ -102,10 +102,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"UITableViewCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    static NSString *CellIdentifier = @"ChompCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == Nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.textLabel.textColor = [[UIColor alloc] initWithRed:1.0 green:.45 blue:0.0 alpha:1.0];
+        cell.detailTextLabel.textColor = [UIColor lightGrayColor];
     }
     
     // Get data
@@ -113,10 +115,9 @@
     
     // Configure the cell...
     cell.textLabel.text = [NSString stringWithFormat:@"%d", chomp.calories];
+    // Make exercise / burned entries a different color
     if (chomp.burned) {
         cell.textLabel.textColor = [[UIColor alloc] initWithRed:0.0 green:0.5664 blue:0.6602 alpha:1.0];
-    } else {
-        cell.textLabel.textColor = [[UIColor alloc] initWithRed:1.0 green:.45 blue:0.0 alpha:1.0];
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
