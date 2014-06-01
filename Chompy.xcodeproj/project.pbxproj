@@ -22,6 +22,12 @@
 		8DF33573193BCCDB00F3C141 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF33557193BCCDA00F3C141 /* CoreData.framework */; };
 		8DF3357B193BCCDB00F3C141 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8DF33579193BCCDB00F3C141 /* InfoPlist.strings */; };
 		8DF3357D193BCCDB00F3C141 /* ChompyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3357C193BCCDB00F3C141 /* ChompyTests.m */; };
+		8DF33588193BCD7300F3C141 /* CYHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF33587193BCD7300F3C141 /* CYHomeViewController.m */; };
+		8DF3358C193BCE8500F3C141 /* CYChomp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3358B193BCE8500F3C141 /* CYChomp.m */; };
+		8DF3358F193BCF7A00F3C141 /* CYChompStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF3358E193BCF7A00F3C141 /* CYChompStore.m */; };
+		8DF33593193BD09F00F3C141 /* CYCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF33591193BD09F00F3C141 /* CYCreateViewController.m */; };
+		8DF33594193BD09F00F3C141 /* CYCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF33592193BD09F00F3C141 /* CYCreateViewController.xib */; };
+		8DF33596193BDE0A00F3C141 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF33595193BDE0A00F3C141 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,16 @@
 		8DF33578193BCCDB00F3C141 /* ChompyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ChompyTests-Info.plist"; sourceTree = "<group>"; };
 		8DF3357A193BCCDB00F3C141 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8DF3357C193BCCDB00F3C141 /* ChompyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChompyTests.m; sourceTree = "<group>"; };
+		8DF33586193BCD7300F3C141 /* CYHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYHomeViewController.h; sourceTree = "<group>"; };
+		8DF33587193BCD7300F3C141 /* CYHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYHomeViewController.m; sourceTree = "<group>"; };
+		8DF3358A193BCE8500F3C141 /* CYChomp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYChomp.h; sourceTree = "<group>"; };
+		8DF3358B193BCE8500F3C141 /* CYChomp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYChomp.m; sourceTree = "<group>"; };
+		8DF3358D193BCF7A00F3C141 /* CYChompStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYChompStore.h; sourceTree = "<group>"; };
+		8DF3358E193BCF7A00F3C141 /* CYChompStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYChompStore.m; sourceTree = "<group>"; };
+		8DF33590193BD09F00F3C141 /* CYCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CYCreateViewController.h; sourceTree = "<group>"; };
+		8DF33591193BD09F00F3C141 /* CYCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CYCreateViewController.m; sourceTree = "<group>"; };
+		8DF33592193BD09F00F3C141 /* CYCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CYCreateViewController.xib; sourceTree = "<group>"; };
+		8DF33595193BDE0A00F3C141 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +133,14 @@
 			children = (
 				8DF33562193BCCDA00F3C141 /* CYAppDelegate.h */,
 				8DF33563193BCCDA00F3C141 /* CYAppDelegate.m */,
+				8DF33586193BCD7300F3C141 /* CYHomeViewController.h */,
+				8DF33587193BCD7300F3C141 /* CYHomeViewController.m */,
+				8DF33590193BD09F00F3C141 /* CYCreateViewController.h */,
+				8DF33591193BD09F00F3C141 /* CYCreateViewController.m */,
+				8DF33592193BD09F00F3C141 /* CYCreateViewController.xib */,
+				8DF33595193BDE0A00F3C141 /* HeaderView.xib */,
+				8DF33589193BCDE100F3C141 /* Data */,
 				8DF33568193BCCDA00F3C141 /* Images.xcassets */,
-				8DF33565193BCCDA00F3C141 /* Chompy.xcdatamodeld */,
 				8DF3355A193BCCDA00F3C141 /* Supporting Files */,
 			);
 			path = Chompy;
@@ -151,6 +173,18 @@
 				8DF33579193BCCDB00F3C141 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8DF33589193BCDE100F3C141 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8DF33565193BCCDA00F3C141 /* Chompy.xcdatamodeld */,
+				8DF3358A193BCE8500F3C141 /* CYChomp.h */,
+				8DF3358B193BCE8500F3C141 /* CYChomp.m */,
+				8DF3358D193BCF7A00F3C141 /* CYChompStore.h */,
+				8DF3358E193BCF7A00F3C141 /* CYChompStore.m */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +265,8 @@
 			files = (
 				8DF3355E193BCCDA00F3C141 /* InfoPlist.strings in Resources */,
 				8DF33569193BCCDA00F3C141 /* Images.xcassets in Resources */,
+				8DF33594193BD09F00F3C141 /* CYCreateViewController.xib in Resources */,
+				8DF33596193BDE0A00F3C141 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +286,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DF33567193BCCDA00F3C141 /* Chompy.xcdatamodeld in Sources */,
+				8DF3358F193BCF7A00F3C141 /* CYChompStore.m in Sources */,
+				8DF33588193BCD7300F3C141 /* CYHomeViewController.m in Sources */,
+				8DF3358C193BCE8500F3C141 /* CYChomp.m in Sources */,
 				8DF33564193BCCDA00F3C141 /* CYAppDelegate.m in Sources */,
 				8DF33560193BCCDA00F3C141 /* main.m in Sources */,
+				8DF33593193BD09F00F3C141 /* CYCreateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
